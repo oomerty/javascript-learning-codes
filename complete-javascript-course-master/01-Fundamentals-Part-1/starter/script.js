@@ -7,3 +7,6 @@ let statusName = true;
 console.log(firstName)
 console.log(typeof firstName); //string
 console.log(typeof statusName); //boolean
+
+firstName = "Ömer"; //Veriyi değiştirirken tekrar let kullanmaya gerek yok
+console.log(firstName);
