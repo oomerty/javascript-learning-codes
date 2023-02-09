@@ -29,6 +29,14 @@ else{
 let description = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
 console.log(description);*/
 
+/*if (population > populationAverage) {
+  console.log(`${country}'s population is above average`);
+}
+else{
+  let populationBelow = populationAverage - population;
+  console.log(`${country}'s population is ${populationBelow} million below average`);
+}*/
+
 let population = 80;
 let populationFinland = 6;
 let populationAverage = 33;
@@ -36,3 +44,4 @@ let populationAverage = 33;
 const country = "Turkiye";
 const continent = "Europe";
 const language = "Turkish"
+

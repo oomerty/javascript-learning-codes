@@ -30,3 +30,4 @@ const firstName = "Ömer Mert";
 const lastName = "ERYİĞİT";
 console.log(`${firstName} ${lastName}`);
 
+
