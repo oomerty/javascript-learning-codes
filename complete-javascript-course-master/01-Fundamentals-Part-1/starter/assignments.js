@@ -51,7 +51,7 @@ console.log('19' - '13' + 17);
 console.log('123' < 57);
 console.log(5 + 6 + '4' + 9 - 4 - 2); */
 
-const numNeighbours = Number(prompt('How many neighbour countries does your country have?'));
+/* const numNeighbours = Number(prompt('How many neighbour countries does your country have?'));
 
 if (numNeighbours === 1) {
   console.log("Only 1 border!")
@@ -59,6 +59,26 @@ if (numNeighbours === 1) {
   console.log("More than 1 border")
 } else (
   console.log("No borders")
-)
+) */
+
+let population = 80;
+const isIsland = true;
+const country = "Turkiye";
+const language = "Turkish";
+
+// country that speaks english, has less than 50 million people and is not an island
+
+/* if ( (language == "English") && (population < 50) && !isIsland ) {
+  console.log(`You should live in ${country} :)`);
+} else {
+  console.log(`${country} does not meet your criteria :(`);
+} */
+
+switch (language) {
+  case chinese:
+  case mandarin:
+}
+
+
 
 

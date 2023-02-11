@@ -16,6 +16,29 @@ if (markBMI > johnBMI) {
 } */
 
 // 3
+/* const dolphins = ((97 + 112 + 101) / 3).toFixed(1);
+const koalas = ((109 + 95 + 123) / 3).toFixed(1);
+
+if ((dolphins < 100) || (koalas <100)) {
+  if ((dolphins < 100) && (koalas <100)) {
+    console.log("Both teams are disqualified!");
+  } else if (dolphins < 100) {
+    console.log(`Dolphins are disqualified with ${dolphins}`);
+  } else {
+    console.log(`Koalas are disqualified with ${koalas}`);
+  }
+} else {
+  if (dolphins === koalas) {
+    console.log("Same score, DRAW!");
+  } else if (dolphins > koalas) {
+    console.log(`Dolphins beats Koalas 🐬 with the score of ${dolphins} - ${koalas}`);
+  } else {
+    console.log(`Koalas beats Dolphins 🐨 with the score of ${koalas} - ${dolphins}`);
+  }
+} */
+
+// 4
+
 
 
 
