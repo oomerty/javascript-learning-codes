@@ -75,8 +75,10 @@ const language = "Turkish";
 } */
 
 switch (language) {
-  case chinese:
-  case mandarin:
+  case "chinese":
+  case "mandarin":
+    console.log("Plan course structure");
+    break
 }
 
 
