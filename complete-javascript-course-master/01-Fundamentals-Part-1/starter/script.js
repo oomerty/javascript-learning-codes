@@ -48,7 +48,7 @@ if (shouldDrive) {
   console.log("Someone else should drive...");
 } */
 
-const day = "monday";
+/* const day = "monday";
 
 switch (day) {
   case "monday": // day === "monday"
@@ -86,5 +86,7 @@ if (day === "monday") {
   console.log("Enjoy the weekend!");
 } else {
   console.log("Not a valid day...");
-}
+} */
+
+
 
