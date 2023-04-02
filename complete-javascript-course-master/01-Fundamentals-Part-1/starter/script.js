@@ -88,5 +88,10 @@ if (day === "monday") {
   console.log("Not a valid day...");
 } */
 
+const age = 16;
+// age >= 18 ? console.log("Şarap içmeyi severim") : console.log("Su içmeyi severim")
+
+const drink = age >= 18 ? "Şarap 🍷" : "Su 💦";
+console.log(`Ben ${drink} içmeyi severim`);
 
 

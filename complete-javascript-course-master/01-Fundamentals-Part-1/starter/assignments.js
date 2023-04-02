@@ -61,11 +61,6 @@ if (numNeighbours === 1) {
   console.log("No borders")
 ) */
 
-let population = 80;
-const isIsland = true;
-const country = "Turkiye";
-const language = "Turkish";
-
 // country that speaks english, has less than 50 million people and is not an island
 
 /* if ( (language == "English") && (population < 50) && !isIsland ) {
@@ -74,27 +69,35 @@ const language = "Turkish";
   console.log(`${country} does not meet your criteria :(`);
 } */
 
-switch (language) {
-  case "chinese":
-  case "mandarin":
-    console.log("MOST number of native speakers!");
-    break
-  case "spanish":
-    console.log("2nd place in number of native speakers");
-    break
-  case "english":
-    console.log("3rd place");
-    break
-  case "hindi":
-    console.log("Number 4");
-    break
-  case "arabic":
-    console.log("5th most spoken language");
-    break
-  default:
-    console.log("Great language too :D");
-}
+// switch (language) {
+//   case "chinese":
+//   case "mandarin":
+//     console.log("MOST number of native speakers!");
+//     break
+//   case "spanish":
+//     console.log("2nd place in number of native speakers");
+//     break
+//   case "english":
+//     console.log("3rd place");
+//     break
+//   case "hindi":
+//     console.log("Number 4");
+//     break
+//   case "arabic":
+//     console.log("5th most spoken language");
+//     break
+//   default:
+//     console.log("Great language too :D");
+// }
 
+let population = 80;
+const isIsland = true;
+const country = "Turkiye";
+const language = "Turkish";
+
+
+// const popStatus = population > 33 ? "above average" : "below average";
+// console.log(`${country}'s population is ${popStatus}`);
 
 
 

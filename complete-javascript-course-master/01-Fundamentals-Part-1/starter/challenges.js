@@ -38,7 +38,11 @@ if ((dolphins < 100) || (koalas <100)) {
 } */
 
 // 4
+let billTotal = 275;
 
+const tip = 50 < billTotal < 300 ? billTotal * 0.15 : billTotal * 0.2;
+console.log(`The bill was ${billTotal}, the tip was ${tip}, and the total value
+${billTotal + tip}`);
 
 
 
