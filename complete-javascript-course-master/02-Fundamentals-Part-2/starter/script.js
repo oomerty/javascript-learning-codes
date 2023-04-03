@@ -62,3 +62,48 @@ let nameUser = prompt("Please enter your name", "");
 console.log(retirementAgeMessage(2002, "Ömer"));
 console.log(retirementAgeMessage(ageUser, nameUser)); */
 
+/* const friends = ["Peter", "Brian", "Stewie"];
+const years = new Array(1984, 1991, 2007, 2023);
+
+// console.log(friends[0]);
+// console.log(friends.length); //3
+// console.log(friends[friends.length -1]); //friends[2]
+
+// friends[2] = "Lois"; //Stewie is changed with Lois
+// console.log(friends[friends.length -1]); //friends[2]
+
+const firstName = "Ömer";
+const userData = [firstName, "ERYİĞİT", 2023 - 2002, "student", friends];
+
+for (let i = 0; i <= 4; i++) {
+  console.log(userData[i]);
+}
+
+const calcAge = birthYear => 2023 - birthYear;
+
+for (let n = 0; n <= 3; n++) {
+  console.log(calcAge(years[n])) 
+} */
+
+/* # ARRAYS
+const friends = ["Peter", "Brian", "Stewie"];
+friends.push("Lois"); //ADD to end
+console.log(friends);
+
+friends.unshift("Chris"); //ADD to beginning
+console.log(friends);
+
+friends.pop(); //REMOVE from end
+const poppedFriend = friends.pop();
+console.log(poppedFriend); //removed friend output
+console.log(friends); 
+
+friends.shift(); //REMOVE from beginning
+console.log(friends); 
+
+console.log(friends.indexOf("Brian")); //Location of brian
+console.log(friends.includes("Brian"));
+console.log(friends.includes("Quagmire")); */
+
+
+

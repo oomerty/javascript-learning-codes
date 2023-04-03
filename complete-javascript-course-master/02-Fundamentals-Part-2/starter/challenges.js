@@ -30,3 +30,25 @@ function describePopulation(country, population) {
 }
 
 // console.log(describePopulation("Türkiye", 80));
+/* const populations = [80, 1441, 33, 727];
+const percentages = [percentageOfWorld1(populations[0]).toFixed(2), percentageOfWorld1(populations[1]).toFixed(2), percentageOfWorld1(populations[2]).toFixed(2), percentageOfWorld1(populations[3]).toFixed(2)];
+console.log(percentages); */
+
+/* const neighbours = ["Turkey", "Bulgaria", "Azerbejian"];
+console.log(neighbours);
+
+neighbours.push("Utopia");
+console.log(neighbours);
+
+neighbours.pop();
+console.log(neighbours);
+
+if (!neighbours.includes("Germany")) {
+  console.log("Probably not a central European country :D")
+} else {
+  console.log("A central European country yey!")
+}
+
+neighbours[0] = "Republic of Turkey";
+console.log(neighbours); */
+

@@ -23,3 +23,17 @@ function checkWinner(team1Avg, team2Avg) {
 }
 
 console.log(checkWinner()); */
+
+// #2
+const calcTip = billTotal => billTotal >= 50 && billTotal <= 300  ? billTotal*0.15 : billTotal*0.2;
+
+const bills = [125, 555, 44];
+const tips = [];
+const total = [];
+
+for (let i = 0; i <= 2; i++) {
+  tips[i] = calcTip(bills[i]);
+  total[i] = bills[i] + tips[i];
+}
+
+console.log(bills, tips, total);
