@@ -52,3 +52,20 @@ if (!neighbours.includes("Germany")) {
 neighbours[0] = "Republic of Turkey";
 console.log(neighbours); */
 
+const myCountry = {
+  country: "Türkiye",
+  capital: "Ankara",
+  language: "Turkish",
+  population: 80,
+  neighbours: ["Azerbejian", "Bulgaria"],
+  checkIsland: function () {
+    this.isIsland = this.neighbours.length === 0 ? true : false;
+    return this.isIsland},
+
+  describe: function () {
+    return `${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`},
+}
+
+/* console.log(myCountry.describe());
+console.log(myCountry.checkIsland()); */
+

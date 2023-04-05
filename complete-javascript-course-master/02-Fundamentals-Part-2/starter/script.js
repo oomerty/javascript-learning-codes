@@ -105,5 +105,56 @@ console.log(friends.indexOf("Brian")); //Location of brian
 console.log(friends.includes("Brian"));
 console.log(friends.includes("Quagmire")); */
 
+/* # OBJECTS
+const omerObject = {
+  firstName: "Ömer",
+  lastName: "ERYİĞİT",
+  pronoun: ["He", "him", "his"],
+  birthYear: 2002,
+  job: "student",
+  friend: ["Utkan", "Davut", "Göktan"],
+  hasDriversLicense: true,
+
+  // calcAge: function () {
+  //   return 2022 - this.birthYear;
+  // }
+
+  calcAge: function () {
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function() {
+    return `${this.firstName} is a ${this.age} years-old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} drivers license. ${this.pronoun[0]} likes to hang out with ${this.pronoun[2]} friends: ${this.friend[0]}, ${this.friend[1]} and ${this.friend[2]}.`
+  }
+} //Literal Syntax
+
+console.log(omerObject);
+console.log(omerObject.lastName);
+console.log(omerObject["lastName"]);
+
+const nameCaller = "Name";
+console.log(omerObject["first" + nameCaller]);
+console.log(omerObject["last" + nameCaller]);
+
+const interestedIn = prompt("What do you want to know about this user? Available selections are firstName, lastName, age, job and friend");
+
+console.log(omerObject[interestedIn])
+
+omerObject.location = "Türkiye";
+omerObject["nickName"] = "oomerty";
+console.log(omerObject);
+
+console.log(`${omerObject.firstName} has ${omerObject.friend.length}, and his best friend is called ${omerObject.friend[0]}`);
+
+console.log(omerObject.calcAge());
+console.log(omerObject.age);
+console.log(omerObject["age"]);
+
+console.log(omerObject.getSummary()); */
+
+// # LOOPS
+
+
 
 

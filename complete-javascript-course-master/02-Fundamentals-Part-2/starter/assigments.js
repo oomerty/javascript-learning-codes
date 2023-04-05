@@ -25,7 +25,7 @@ function checkWinner(team1Avg, team2Avg) {
 console.log(checkWinner()); */
 
 // #2
-const calcTip = billTotal => billTotal >= 50 && billTotal <= 300  ? billTotal*0.15 : billTotal*0.2;
+/* const calcTip = billTotal => billTotal >= 50 && billTotal <= 300  ? billTotal*0.15 : billTotal*0.2;
 
 const bills = [125, 555, 44];
 const tips = [];
@@ -36,4 +36,28 @@ for (let i = 0; i <= 2; i++) {
   total[i] = bills[i] + tips[i];
 }
 
-console.log(bills, tips, total);
+console.log(bills, tips, total); */
+
+// #3
+const userMark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+}
+
+const userJohn = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  }
+}
+
+console.log(userMark.calcBMI() > userJohn.calcBMI() ? `${userMark.fullName}'s BMI (${(userMark.calcBMI()).toFixed(2)}) is higher than ${userJohn.fullName}'s (${(userJohn.calcBMI()).toFixed(2)})!` : `${userJohn.fullName}'s BMI (${(userJohn.calcBMI()).toFixed(2)}) is higher than ${userMark.fullName}'s (${(userMark.calcBMI()).toFixed(2)})!`);
+
