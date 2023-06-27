@@ -69,3 +69,39 @@ const myCountry = {
 /* console.log(myCountry.describe());
 console.log(myCountry.checkIsland()); */
 
+// for (let i = 1; i <= 50; i++) {
+//   console.log(`Voter number ${i} is currently voting`);
+// }
+
+/*const populations = [80, 1441, 33, 727];
+const percentages = [percentageOfWorld1(populations[0]).toFixed(2), percentageOfWorld1(populations[1]).toFixed(2), percentageOfWorld1(populations[2]).toFixed(2), percentageOfWorld1(populations[3]).toFixed(2)];
+let percentages2 = [];
+
+for (i = 0; i < populations.length; i++) {
+  deneme = populations[i] / 79;
+  percentages[i] == deneme.toFixed(2) ? percentages2[i] = true : percentages2[i] = false;
+}
+
+console.log(`${percentages2}`);*/
+
+/*const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+for (i=0; i < listOfNeighbours.length; i++) {
+  for(n=0; n < listOfNeighbours[i].length; n++) {
+    console.log(`${listOfNeighbours[i][n]}`);
+  }
+}*/
+
+/*const populations = [80, 1441, 33, 727];
+const percentages = [percentageOfWorld1(populations[0]).toFixed(2), percentageOfWorld1(populations[1]).toFixed(2), percentageOfWorld1(populations[2]).toFixed(2), percentageOfWorld1(populations[3]).toFixed(2)];
+let percentages3 = [];
+
+let i = 0;
+while (i < populations.length) {
+  deneme = populations[i] / 79;
+  percentages[i] == deneme.toFixed(2) ? percentages3[i] = true : percentages3[i] = false;
+  i++;
+}
+
+console.log(`${percentages3}`);*/
+

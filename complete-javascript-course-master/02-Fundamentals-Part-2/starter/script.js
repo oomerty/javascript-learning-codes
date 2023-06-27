@@ -154,7 +154,15 @@ console.log(omerObject["age"]);
 console.log(omerObject.getSummary()); */
 
 // # LOOPS
+/*for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights rep ${rep} ${rep % 2 ? "🏋️" : "🏋️‍♂️"}`);
+}*/
 
+/*for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`----- EXERCISE ${exercise} STARTS -----`);
 
-
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`Lifting weights rep ${rep} 🏋️`)
+  }
+}*/
 
