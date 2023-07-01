@@ -16,6 +16,9 @@ body {
   color: #eee;
   background-color: #222;
   /* background-color: #60b347; */
+
+  transition-property: background-color;
+  transition-duration: 200ms;
 }
 
 /* LAYOUT */
@@ -67,6 +70,9 @@ h1 {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+
+  transition-property: width;
+  transition-duration: 200ms;
 }
 
 .between {
