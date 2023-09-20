@@ -31,7 +31,36 @@ const restaurant = {
   orderDelivery: function({starterIndex = 1, mainIndex = 0, address, time = `20:00`}) {
     console.log(`Order received! Your ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
   },
+
+  orderPasta: function(ing1, ing2, ing3) {
+    console.log(`Here is your fire pizza with ${ing1}, ${ing2} and ${ing3}!`);
+  }
 };
+
+/* Rest Pattern and Parameters */
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+/* Spread Operator - good for copying and combining arrays */
+/*const arr = [3, 4, 5];
+const newArr = [1, 2];
+const finalArr = [...newArr, ...arr];
+console.log(finalArr);
+console.log(...finalArr);
+
+const firstName = "Ömer";
+const letters = [...firstName, " ", "E."]
+console.log(letters);
+
+const ingredients = [
+  prompt(`Let's make pasta! First ingredient is...`, ``),
+  prompt(`Second ingredient is...`, ``),
+  prompt(`And our finishing ingredient is...`, ``)
+]
+restaurant.orderPasta(...ingredients);
+
+const newRestaurant = {foundedIn: 1998, ...restaurant, founder: "Guiseppe",};
+console.log(newRestaurant);*/
 
 /* Destructuring Objects */
 /*restaurant.orderDelivery({
