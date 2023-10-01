@@ -1,9 +1,9 @@
 'use strict';
 
 // Data needed for first part of the section
-const weekdays = ["mon", "tue", "wed", "fri", "sat", "sun"];
+const weekdays = ['mon', 'tue', 'wed', 'fri', 'sat', 'sun'];
 
-const openingHours= {
+const openingHours = {
   [weekdays[2]]: {
     open: 12,
     close: 22,
@@ -24,7 +24,7 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  
+
   openingHours: {
     [weekdays[2]]: {
       open: 12,
@@ -48,18 +48,95 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function({starterIndex = 1, mainIndex = 0, address, time = `20:00`}) {
-    console.log(`Order received! Your ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    address,
+    time = `20:00`,
+  }) {
+    console.log(
+      `Order received! Your ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
   },
 
-  orderPasta: function(ing1, ing2, ing3) {
+  orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your fire pizza with ${ing1}, ${ing2} and ${ing3}!`);
-  }
+  },
 };
 
 
 
-// Looping Objects: Object Keys, Values, Entires
+// LESSON: Maps: Iteration
+/*const question = new Map ([
+  [`question`, `What is the best programming langue in the world?`],
+  [1, `C`],
+  [2, `Java`],
+  [3, `JavaScript`],
+  [`correct`, 3],
+  [true, `Congrats 🎉`],
+  [false, `Try again!`]
+]);
+console.log(question.get(`question`));
+for (const [k,v] of question) {
+  if (typeof(k) === `number`) console.log(`Answer ${k}: ${v}`);
+}
+const answer = Number(prompt(`You answer`, Number()));
+console.log(question.get(answer === question.get(`correct`)));*/
+
+// LESSON: Maps: Fundementals - like objects
+/*const rest = new Map();
+rest.set(`name`, `Classico Italiano`);
+rest.set(1, `Firenze, Italy`);
+console.log(rest.set(2, `Lisbon, Portugal`));
+
+rest
+  .set(`categories`, ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set(`open`, 11)
+  .set(`close`, 23)
+  .set(true, `We are open 😍`)
+  .set(false, `We are closed 😔`);
+
+console.log(rest.get(`name`));
+console.log(rest.get(true));
+
+let time = 22;
+console.log(rest.get(time > rest.get(`open`) && time < rest.get(`close`) ? true : false));
+rest.delete(2);
+rest.set([1,2], `deneme`); //const arr = [1, 2]; cl(rest.get(arr));
+rest.set(document.querySelector('h1'), `Heading`)
+console.log(rest, rest.size);*/
+
+// LESSON: Sets - like arrays
+/*const orderSet = new Set([
+  `Pasta`,
+  `Pizza`,
+  `Pizza`,
+  `Risotto`,
+  `Pasta`,
+  `Pizza`,
+]);
+
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has(`Pizza`));
+console.log(orderSet.has(`Bread`));
+
+orderSet.add(`Garlic Bread`);
+orderSet.add(`Garlic Bread`);
+console.log(orderSet);
+orderSet.delete(`Risotto`);
+console.log(orderSet);
+// orderSet.clear(`Risotto`);
+// console.log(orderSet);
+
+// console.log(new Set(`Jonas`));
+// console.log(new Set([`Jonas`]));
+
+const staff = [`Waiter`, `Chef`, `Waiter`, `Manager`, `Chef`, `Waiter`];
+const staffUniqıe = [...new Set(staff)];
+console.log(staff, staffUniqıe);*/
+
+// LESSON: Looping Objects: Object Keys, Values, Entires
 /*const properties = Object.keys(openingHours);
 
 //Property Keys
@@ -81,13 +158,13 @@ for (const [day, {open, close}] of entries) {
 }
 */
 
-// Optional Chaining ?.
+// LESSON: Optional Chaining ?.
 /*if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
 if (restaurant.openingHours.sat) console.log(restaurant.openingHours.sat.open);
 console.log(restaurant.openingHours.sat?.open);*/
 
-/* Looping Arrays - for-of loop */
+/* LESSON: Looping Arrays - for-of loop */
 /*const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 for(const item of menu) console.log(item);
@@ -97,7 +174,7 @@ for(const [i, el] of menu.entries()) {
 
 // console.log([...menu.entries()]);*/
 
-/* Logical Assigment Operators */
+/* LESSON: Logical Assigment Operators */
 /*const rest1 = {
   name: "Capri",
   numGuest: 22,
@@ -122,13 +199,13 @@ rest1.owner &&= "<ANONYMUS>";
 rest2.owner &&= "<ANONYMUS>";
 console.log(rest1.owner, rest2.owner);*/
 
-/* The Nullish Coalescing Operator (??) */
+/* LESSON: The Nullish Coalescing Operator (??) */
 /*restaurant.guestNmbr = 0;
 const guest = restaurant.guestNmbr || 10;
 const guestCorrect = restaurant.guestNmbr ?? 10;
 console.log(guest, guestCorrect);*/
 
-/* Short Circuiting (|| and &&) */
+/* LESSON: Short Circuiting (|| and &&) */
 /*console.log(0 || "Ömer");
 console.log("Ömer" || "Mert");
 console.log(null || undefined);
@@ -138,11 +215,11 @@ console.log(0 && "Ömer");
 console.log(7 && "Ömer");
 console.log(7 && "Ömer" && null && "Mert");*/
 
-/* Rest Pattern and Parameters */
+/* LESSON: Rest Pattern and Parameters */
 /*const [a, b, ...others] = [1, 2, 3, 4, 5];
 console.log(a, b, others);*/
 
-/* Spread Operator - good for copying and combining arrays */
+/* LESSON: Spread Operator - good for copying and combining arrays */
 /*const arr = [3, 4, 5];
 const newArr = [1, 2];
 const finalArr = [...newArr, ...arr];
@@ -163,7 +240,7 @@ restaurant.orderPasta(...ingredients);
 const newRestaurant = {foundedIn: 1998, ...restaurant, founder: "Guiseppe",};
 console.log(newRestaurant);*/
 
-/* Destructuring Objects */
+/* LESSON: Destructuring Objects */
 /*restaurant.orderDelivery({
   time: `22:30`,
   address: `Via del Sole, 21`,
@@ -199,7 +276,7 @@ const {
 } = openingHours;
 console.log(o, c);*/
 
-/* Destructuring Arrays */
+/* LESSON: Destructuring Arrays */
 // // let str = ``;
 // // for(let i=0; i < restaurant.categories.length; i++) {
 // //   str = str + `${restaurant.categories[i]}, `;
