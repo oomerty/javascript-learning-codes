@@ -64,7 +64,121 @@ const restaurant = {
   },
 };
 
+// LESSON: Strings 3
+/*console.log(`a+very+nice+string`.split(`+`));
 
+const [firstName, lastName] = `Ömer Eryiğit`.split(` `);
+console.log(`${firstName} ${lastName.toUpperCase()}`);
+const newName = [`Mr.`, firstName, lastName.toUpperCase()].join(` `);
+console.log(newName); 
+
+function capitalizeName(name) {
+  //lower case the name, split and select last item to capitilaze
+  let newName = name.toLowerCase().split(` `);
+  let correctName = [];
+  for (const i of newName) {
+    correctName += i != newName[Object.keys(newName).length - 1] ? i[0].toUpperCase() + i.slice(1) + ` ` : i.toUpperCase();
+  }
+  console.log(correctName);
+};
+capitalizeName(`jessica anN smith davis`);
+capitalizeName(`ömer mert hamza eryiğit`)
+
+// Padding
+const message = `Go to gate 23!`;
+console.log(message.padEnd(25, `!`));
+
+function maskCC (number) {
+  const str = number + ``;
+  console.log(str.slice(-4).padStart(str.length, `*`));
+};
+maskCC(4553791573297626);
+
+// Repeat
+const repeatedMsg = `Bad Weather... All Departures Delayed... `;
+console.log(repeatedMsg.repeat(3));
+
+function planesInLine(n) {
+  console.log(`The are ${n} planes waiting in line ${`✈️`.repeat(n)}`);
+}
+planesInLine(5);*/
+
+// LESSON: Strings 2
+/*const airline = `The Turkish Airlines`;
+const plane = `A320`;
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const passengerName = `jOnAs`;
+const passengerNameLower = passengerName.toLowerCase();
+const passengerNameCorrect = passengerNameLower[0].toUpperCase() + passengerNameLower.slice(1);
+console.log(passengerNameCorrect);
+
+// Email Comparison
+const email = `jonas@hello.com`;
+const loginEmail = `  jOnaS@heLlo.COm \n`
+// const loginEmailLow = loginEmail.toLowerCase();
+// const loginEmailTrim = loginEmailLow.trim();
+const loginEmailCorrect = loginEmail.toLowerCase().trim();
+console.log(email === loginEmailCorrect);
+
+// Replacing
+const priceTL = `1.146,62₺`;
+let priceUStoTL = 27.39;
+let priceTLnum = Number(priceTL.replace(`₺`, ``).replace(`.`, ``).replace(`,`, `.`));
+
+const priceUS = priceTL.replace(`₺`, `$`);
+let priceUSnum = `\$${(priceTLnum/priceUStoTL).toFixed(2)}`;
+
+console.log(priceTL, priceUSnum);
+
+const announcementNote = `All passengers come to the door 23. Boarding door 23!`;
+console.log(announcementNote.replaceAll(`door`, `gate`));
+console.log(announcementNote.replaceAll(/door/g, `gate`)); //Old method
+
+// Booleans
+const plane2 = `A320neo`;
+console.log(plane2.includes(`A320`));
+console.log(plane2.includes(`Boeing`));
+console.log(airline.startsWith(`The`));
+console.log(airline.slice(4).startsWith(`Turkish`));
+
+// Practice
+function checkBaggage(items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes(`gun`) || baggage.includes(`knife`)) {
+    console.log(`You are NOT allowed on this flight.`);
+  } else {
+    console.log(`Welcome abord! ✈️`);
+  }
+}
+checkBaggage(`I have a Laptop, some Food and a pocket Knife`);
+checkBaggage(`Socks and camera`);
+checkBaggage(`Got some snacks and a gun for protection`);*/
+
+// LESSON: Strings 1
+/*const airline = `The Turkish Airlines`;
+const plane = `A320`;
+
+console.log(airline.indexOf(`r`));
+console.log(airline.lastIndexOf(`r`));
+console.log(airline.indexOf(`Air`));
+
+console.log(airline.slice(4)); //Remove 0,1,2,3 - It become substring
+console.log(airline.slice(4,11));
+
+console.log(airline.slice(0, airline.indexOf(` `)));
+console.log(airline.slice(airline.lastIndexOf(` `) + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+function checkMiddleSeat (seat) {
+  //B and E are middle seats
+  console.log(`Your seat is${seat.indexOf(`B`) === 2 || seat.indexOf(`E`) === 2 ? `` : ` not`} in the middle.`);
+};
+checkMiddleSeat(`11B`);*/
 
 // LESSON: Maps: Iteration
 /*const question = new Map ([
