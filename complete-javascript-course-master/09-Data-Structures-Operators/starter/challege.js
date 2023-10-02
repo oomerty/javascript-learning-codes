@@ -179,5 +179,22 @@ for (const [min, event] of gameEvents) {
 }*/
 
 // CHALLENGE: 4
-document.body.append(document.createElement('textarea'));
+/*document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
+
+const btn = document.querySelector("button");
+btn.addEventListener('click', function() {
+    let correctName = document.querySelector(`textarea`).value;
+    correctName = correctName.split(`\n`);
+    let longWord = 0;
+    for (const x of correctName) {
+        longWord < x.length ? longWord = x.length : longWord;
+    }
+
+    for (let i = 0; i < correctName.length; i++) {
+        let mcName = correctName[i] + ``;
+        mcName = mcName.trim().toLowerCase().split(`_`);
+        mcName[mcName.length - 1] = mcName[mcName.length - 1].replace(mcName[mcName.length - 1][0], mcName[mcName.length - 1][0].toUpperCase());
+        console.log(mcName.join(``).padEnd(longWord, ` `) + `${`✅`.repeat(i+1)}`);
+    };
+});*/

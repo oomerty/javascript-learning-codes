@@ -64,6 +64,17 @@ const restaurant = {
   },
 };
 
+// LESSON: Practice
+/*const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const newFlights = flights.split(`+`);
+for (const i of newFlights) {
+  let displayedFlight = i.slice(1).split(`;`);
+  displayedFlight[0] = displayedFlight[0].split(`_`).join(` `);
+  console.log(`${displayedFlight[0] === `Delayed Departure` || displayedFlight[0] === `Delayed Arrival` ? `🔴` : ``} ${displayedFlight[0]} from ${displayedFlight[1].slice(0, 3).toUpperCase()} to ${displayedFlight[2].slice(0, 3).toUpperCase()} (${displayedFlight[3]})`.padStart(55));
+}*/
+
 // LESSON: Strings 3
 /*console.log(`a+very+nice+string`.split(`+`));
 
@@ -416,6 +427,3 @@ console.log(o, c);*/
 // // console.log(arr);
 
 // Data needed for a later exercise
-
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
