@@ -51,3 +51,28 @@ function newPassport(person) {
 newPassport(omer);
 console.log(omer);
 checkIn(flight, omer);
+
+function oneWord(str) {
+  return str.replace(/ /g, ``).toLowerCase();
+};
+
+function upperFirstWord(str) {
+  const [first, ...other] = str.split(` `);
+  return [first.toUpperCase(), ...other].join(` `);
+};
+
+//High Order Func
+function transformer(str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed by ${fn.name} function.`);
+};
+
+transformer(`JavaScript is the best!`, upperFirstWord);
+transformer(`JavaScript is the best!`, oneWord);
+
+function highFive() {
+  console.log(`👋🏻`);
+};
+document.body.addEventListener('click', highFive);
+[`Ömer`, `Göktan`, `Ümit`, `Kerem`].forEach(highFive);
