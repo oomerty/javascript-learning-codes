@@ -1,6 +1,6 @@
 'use strict';
 
-const bookings = [];
+/*const bookings = [];
 
 function createBooking(
     flightNumber,
@@ -75,4 +75,18 @@ function highFive() {
   console.log(`👋🏻`);
 };
 document.body.addEventListener('click', highFive);
-[`Ömer`, `Göktan`, `Ümit`, `Kerem`].forEach(highFive);
+[`Ömer`, `Göktan`, `Ümit`, `Kerem`].forEach(highFive);*/
+
+function greet(greetings) {
+  return function(name) {
+    console.log(`${greetings} ${name}`);
+  };
+};
+
+const greeterHey = greet(`Hey`);
+greeterHey(`Ömer`);
+greeterHey(`Jonas`);
+greet(`Hello`)(`Jonas`);
+
+const greet2 = (greetings) => (name) => console.log(`${greetings} ${name}`);
+greet2(`Sup`)(`Jonas`);
