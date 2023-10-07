@@ -74,3 +74,40 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+// LESSON: Simple Array Methods (Slice, Splice, Reverse, Concat, Join)
+/*let arr = [`a`, `b`, `c`, `d`, `e`];
+
+// Slice
+console.log(arr.slice(2)); //  ['c', 'd', 'e']
+console.log(arr.slice(2, 4)); // ['c', 'd']
+console.log(arr.slice(-2)); // ['d', 'e']
+console.log(arr.slice(1, -2)); // ['b', 'c']
+
+// Splice // Changes original one
+console.log(arr.splice(2)); // ['c', 'd', 'e']
+console.log(arr); // ['a', 'b']
+
+// Reverse // Changes original one
+arr = [`a`, `b`, `c`, `d`, `e`];
+const arr2 = [`f`, `g`, `h`, `i`, `j`];
+console.log(arr2.reverse()); //  ['j', 'ı', 'h', 'g', 'f']
+console.log(arr2); // Changes original one
+
+// Concat
+const letters = arr.concat(arr2);
+console.log(letters); // ['a', 'b', 'c', 'd', 'e', 'j', 'i', 'h', 'g', 'f']
+
+// Join
+console.log(letters.join()); // a,b,c,d,e,j,i,h,g,f
+console.log(letters.join(` - `)); // a - b - c - d - e - j - i - h - g - f*/
+
+// LESSON: The new at Method
+const arr = [233, 11, 64];
+console.log(arr[0]);
+console.log(arr.at(0));
+
+// gettin last element
+console.log(arr[arr.length - 1]);
+console.log(arr.slice(-1)[0]);
+console.log(arr.at(-1));

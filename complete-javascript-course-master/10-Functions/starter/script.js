@@ -149,5 +149,59 @@ console.log(addTaxNew(0.1)(200));
 const addVATNew = addTaxNew(0.23);
 console.log(addVATNew(100));*/
 
-// LESSON: 
+// LESSON: Immediately Invoked Function Expressions (IIFE)
+/*(function () {
+  console.log(`This will run once!`);
+})();
 
+(() => console.log(`This is will run once too!`))();*/
+
+// LESSON: Closures
+/*function secureBooking() {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+booker();
+booker();
+booker();
+
+//console.dir(booker);
+
+let f;
+function g() {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+function h() {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+
+h();
+f();
+
+function boardPassengers(n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function(){
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000)
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+boardPassengers(180, 3);*/
