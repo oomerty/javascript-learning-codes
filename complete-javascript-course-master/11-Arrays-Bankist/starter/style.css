@@ -16,9 +16,9 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
   color: #444;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   height: 100vh;
   padding: 2rem;
 }
@@ -50,16 +50,17 @@ nav {
   font-family: inherit;
   text-align: center;
   width: 12rem;
-  border-radius: 10rem;
   margin-right: 1rem;
-  color: inherit;
-  border: 1px solid #fff;
+  color: #464C53;
   transition: all 0.3s;
+
+  border-radius: 100px;
+  border: 1px solid #16191D;
 }
 
 .login__input:focus {
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid #f6f7f9;
 }
 
 .login__input::placeholder {
@@ -70,9 +71,12 @@ nav {
   border: none;
   background: none;
   font-size: 2.2rem;
-  color: inherit;
   cursor: pointer;
   transition: all 0.3s;
+  background-color: rgba(0, 95, 204, 1);
+  color: rgba(255, 255, 255, 1);
+  padding: 0 1.2rem;
+  border-radius: 100px;
 }
 
 .login__btn:hover,
@@ -80,7 +84,8 @@ nav {
 .btn--sort:hover,
 .btn--sort:focus {
   outline: none;
-  color: #777;
+  color: #464C53;
+  border: 1px solid #005FCC;
 }
 
 /* MAIN */
@@ -91,10 +96,10 @@ nav {
   display: grid;
   grid-template-columns: 4fr 3fr;
   grid-template-rows: auto repeat(3, 15rem) auto;
-  gap: 2rem;
+  gap: 1.2rem;
 
   /* NOTE This creates the fade in/out anumation */
-  opacity: 0;
+  /* opacity: 0; */
   transition: all 1s;
 }
 
@@ -125,9 +130,10 @@ nav {
 /* MOVEMENTS */
 .movements {
   grid-row: 2 / span 3;
-  background-color: #fff;
-  border-radius: 1rem;
+  background-color: #FCFCFD;
+  border-radius: 0.3rem;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .movements__row {
@@ -140,9 +146,9 @@ nav {
 .movements__type {
   font-size: 1.1rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   color: #fff;
-  padding: 0.1rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 10rem;
   margin-right: 2rem;
 }
@@ -155,11 +161,15 @@ nav {
 }
 
 .movements__type--deposit {
-  background-image: linear-gradient(to top left, #39b385, #9be15d);
+  /* background-image: linear-gradient(to top left, #39b385, #9be15d); */
+  background-color: rgb(229, 255, 239);
+  color: rgb(0, 102, 41);
 }
 
 .movements__type--withdrawal {
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  /* background-image: linear-gradient(to top left, #e52a5a, #ff585f); */
+  background-color: rgb(252, 214, 175);
+  color: rgb(170, 30, 48);
 }
 
 .movements__value {
@@ -208,21 +218,24 @@ nav {
 
 /* OPERATIONS */
 .operation {
-  border-radius: 1rem;
+  border-radius: 3px;
   padding: 3rem 4rem;
   color: #333;
 }
 
 .operation--transfer {
-  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+  /* background-image: linear-gradient(to top left, #ffb003, #ffcb03); */
+  background-color: #FF8800;
 }
 
 .operation--loan {
-  background-image: linear-gradient(to top left, #39b385, #9be15d);
+  /* background-image: linear-gradient(to top left, #39b385, #9be15d); */
+  background-color: #00CC52;
 }
 
 .operation--close {
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  /* background-image: linear-gradient(to top left, #e52a5a, #ff585f); */
+  background-color: #FF2E1F;
 }
 
 h2 {

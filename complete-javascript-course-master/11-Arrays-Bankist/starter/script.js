@@ -61,6 +61,24 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+// LESSON: Creating DOM Elements
+function displayMovement(movements) {
+  containerMovements.innerHTML = ``;
+
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? `deposit` : `withdrawal`;
+    const html = 
+    `<div class="movements__row">
+        <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+        <div class="movements__date">3 days ago</div>
+        <div class="movements__value">${mov}</div>
+    </div>`;
+
+    containerMovements.insertAdjacentHTML(`afterbegin`, html);
+  });
+};
+displayMovement(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -103,11 +121,45 @@ console.log(letters.join()); // a,b,c,d,e,j,i,h,g,f
 console.log(letters.join(` - `)); // a - b - c - d - e - j - i - h - g - f*/
 
 // LESSON: The new at Method
-const arr = [233, 11, 64];
+/*const arr = [233, 11, 64];
 console.log(arr[0]);
 console.log(arr.at(0));
 
 // gettin last element
 console.log(arr[arr.length - 1]);
 console.log(arr.slice(-1)[0]);
-console.log(arr.at(-1));
+console.log(arr.at(-1));*/
+
+// LESSON: Looping Arrays: forEach
+/*//const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdraw ${Math.abs(movement)}`);
+  }
+};
+
+console.log(`----- FOREACH -----`);
+movements.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`Movement ${index + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${index + 1}: You withdraw ${Math.abs(movement)}`);
+  }
+});*/
+
+// LESSON: forEach With Maps and Sets
+/*// MAP
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+// SET
+const currenciesUnique = new Set([`USD`, `GBP`, `USD`, `EUR`, `EUR`]);
+currenciesUnique.forEach(function (value, _, set) { // _ : Throwaway
+  console.log(`${value}: ${value}`);
+});*/
+
+// LESSON: 
