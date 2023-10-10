@@ -96,7 +96,7 @@ nav {
   display: grid;
   grid-template-columns: 4fr 3fr;
   grid-template-rows: auto repeat(3, 15rem) auto;
-  gap: 1.2rem;
+  gap: 0.4rem 1.2rem;
 
   /* NOTE This creates the fade in/out anumation */
   /* opacity: 0; */
@@ -225,17 +225,26 @@ nav {
 
 .operation--transfer {
   /* background-image: linear-gradient(to top left, #ffb003, #ffcb03); */
-  background-color: #FF8800;
+  /* background-color: #FF8800; */
+  background-color: rgb(228, 226, 255);
+  color: rgb(0, 87, 190);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
 }
 
 .operation--loan {
   /* background-image: linear-gradient(to top left, #39b385, #9be15d); */
-  background-color: #00CC52;
+  /*background-color: #00CC52;*/
+  background-color: rgb(229, 255, 239);
+  color: rgb(0, 102, 41);
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
 }
 
 .operation--close {
   /* background-image: linear-gradient(to top left, #e52a5a, #ff585f); */
-  background-color: #FF2E1F;
+  /* background-color: #FF2E1F; */
+  background-color: rgb(252, 214, 175);
+  color: rgb(170, 30, 48);
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
 }
 
 .operation--title {
@@ -295,9 +304,11 @@ h2 {
   border: none;
   border-radius: 100px;
   font-size: 1.8rem;
-  background-color: #fff;
   cursor: pointer;
   transition: all 0.3s;
+  background-color: rgba(0, 95, 204, 1);
+  color: rgba(255, 255, 255, 1);
+  padding: 0 1.2rem;
 }
 
 .form__btn:focus {
