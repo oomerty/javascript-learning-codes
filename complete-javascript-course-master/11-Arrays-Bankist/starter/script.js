@@ -79,6 +79,20 @@ function displayMovement(movements) {
 };
 displayMovement(account1.movements);
 
+function printDisplayBalance() {
+  let balance = account1.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance}€`;
+};
+printDisplayBalance(account1.movements);
+
+function createUsername(accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner.toLowerCase().split(` `).map(value => value[0]).join(``);
+  });
+};
+createUsername(accounts);
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -161,5 +175,34 @@ const currenciesUnique = new Set([`USD`, `GBP`, `USD`, `EUR`, `EUR`]);
 currenciesUnique.forEach(function (value, _, set) { // _ : Throwaway
   console.log(`${value}: ${value}`);
 });*/
+
+// LESSON: Data Transformations: map, filter, reduce
+// map Method - creates new array with instructions
+/*const euroToUsd = 1.1;
+const movemenToUsd = movements.map(mov => (mov * euroToUsd).toFixed(2));
+console.log(movements);
+console.log(movemenToUsd);
+
+const movementsDesc = movements.map((mov, i) => `Movement ${i + 1}: You ${mov > 0 ? `deposited` : `withdraw`} ${Math.abs(mov)}`);
+console.log(movementsDesc);*/
+
+// filter Method - filters elements that satisfy certain instructions
+/*const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(movements);
+console.log(deposits);
+console.log(withdrawals);*/
+
+// reduce Method - accumulator: SNOWBALL
+/*let balance = movements.reduce(function (acc, cur, i, arr) {
+  console.log(`Iteration ${i}: ${acc}`);
+  return acc + cur;
+}, 1000); // 3840 + accumulator's defaultvalue 1000
+console.log(balance);
+
+let maxNmbr = movements.reduce((acc, cur) => cur > acc ? acc = cur : acc);
+console.log(maxNmbr), movements[0];*/
 
 // LESSON: 

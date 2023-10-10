@@ -85,7 +85,7 @@ nav {
 .btn--sort:focus {
   outline: none;
   color: #464C53;
-  border: 1px solid #005FCC;
+  background-color: 1px solid #005FCC;
 }
 
 /* MAIN */
@@ -200,11 +200,11 @@ nav {
 
 .summary__value--in,
 .summary__value--interest {
-  color: #66c873;
+  color: rgb(0, 102, 41);
 }
 
 .summary__value--out {
-  color: #f5465d;
+  color: rgb(170, 30, 48);
 }
 
 .btn--sort {
@@ -238,6 +238,13 @@ nav {
   background-color: #FF2E1F;
 }
 
+.operation--title {
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: -0.24px;
+  text-transform: uppercase;
+}
+
 h2 {
   margin-bottom: 1.5rem;
   font-size: 1.7rem;
@@ -249,7 +256,7 @@ h2 {
   display: grid;
   grid-template-columns: 2.5fr 2.5fr 1fr;
   grid-template-rows: auto auto;
-  gap: 0.4rem 1rem;
+  gap: 0.4rem 0.6rem;
 }
 
 /* Exceptions for interst */
@@ -269,14 +276,14 @@ h2 {
   font-size: 1.5rem;
   text-align: center;
   color: #333;
+  background-color: #fff;
   padding: 0.3rem 1rem;
-  border-radius: 0.7rem;
+  border-radius: 100px;
   transition: all 0.3s;
 }
 
 .form__input:focus {
   outline: none;
-  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .form__label {
@@ -286,7 +293,7 @@ h2 {
 
 .form__btn {
   border: none;
-  border-radius: 0.7rem;
+  border-radius: 100px;
   font-size: 1.8rem;
   background-color: #fff;
   cursor: pointer;
