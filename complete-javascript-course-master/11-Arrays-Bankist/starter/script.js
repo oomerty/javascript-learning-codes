@@ -61,7 +61,16 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-// LESSON: Creating DOM Elements
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+//
+
 function displayMovement(movements) {
   containerMovements.innerHTML = ``;
 
@@ -79,11 +88,25 @@ function displayMovement(movements) {
 };
 displayMovement(account1.movements);
 
-function printDisplayBalance() {
-  let balance = account1.movements.reduce((acc, mov) => acc + mov, 0);
+function printDisplayBalance(movements) {
+  let balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance}€`;
 };
 printDisplayBalance(account1.movements);
+
+function calcDisplaySummary(accs) {
+  const incomes = movements.filter(mov => mov > 0).reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}€`;
+  const outcomes = movements.filter(mov => mov < 0).reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(outcomes)}€`;
+  const interest = movements.filter(mov => mov > 0).map(deposit => deposit * 1.2 / 100).filter((int) => int >= 1).reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest}€`;
+}
+calcDisplaySummary(account1.movements);
+
+/*const euroToUsd = 1.1;
+const totalDepositsUSD = movements.filter(mov => mov > 0).map(mov => mov * euroToUsd).reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD);*/
 
 function createUsername(accs) {
   accs.forEach(function (acc) {
@@ -92,18 +115,17 @@ function createUsername(accs) {
 };
 createUsername(accounts);
 
-
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -205,4 +227,9 @@ console.log(balance);
 let maxNmbr = movements.reduce((acc, cur) => cur > acc ? acc = cur : acc);
 console.log(maxNmbr), movements[0];*/
 
-// LESSON: 
+// LESSON: Find method
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements, firstWithdrawal);
+
+const account = accounts.find(acc => acc.owner === `Jessica Davis`);
+console.log(account.username);

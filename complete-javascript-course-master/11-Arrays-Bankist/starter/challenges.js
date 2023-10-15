@@ -13,10 +13,9 @@ function checkDogs(arrJulia, arrKate) {
 
 // CHALLENGE: 2
 function calcAverageHumanAge(ages) {
-  let dogToHuman;
-  ages.forEach(function (value, key) {
-    dogToHuman = value <= 2 ? 2 * value : 16 + value * 4;
-  });
-  return dogToHuman;
+  ages.forEach((value, key) => ages[key] = value <= 2 ? 2 * value : 16 + value * 4);
+  let dogToHuman = ages.filter(ages => ages >= 18);
+  let dogAgeAvg = dogToHuman.reduce((acc, cur) => acc + cur) / dogToHuman.length;
+  return dogAgeAvg;
 };
-console.log(calcAverageHumanAge(dogsKate));
+//console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
