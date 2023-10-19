@@ -86,23 +86,20 @@ function displayMovement(movements) {
     containerMovements.insertAdjacentHTML(`afterbegin`, html);
   });
 };
-displayMovement(account1.movements);
 
 function printDisplayBalance(movements) {
   let balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance}€`;
 };
-printDisplayBalance(account1.movements);
 
-function calcDisplaySummary(accs) {
-  const incomes = movements.filter(mov => mov > 0).reduce((acc, mov) => acc + mov, 0);
+function calcDisplaySummary(acc) {
+  const incomes = acc.movements.filter(mov => mov > 0).reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes}€`;
-  const outcomes = movements.filter(mov => mov < 0).reduce((acc, mov) => acc + mov, 0);
+  const outcomes = acc.movements.filter(mov => mov < 0).reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(outcomes)}€`;
-  const interest = movements.filter(mov => mov > 0).map(deposit => deposit * 1.2 / 100).filter((int) => int >= 1).reduce((acc, int) => acc + int, 0);
-  labelSumInterest.textContent = `${interest}€`;
+  const interest = acc.movements.filter(mov => mov > 0).map(deposit => deposit * acc.interestRate / 100).filter((int) => int >= 1).reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
 }
-calcDisplaySummary(account1.movements);
 
 /*const euroToUsd = 1.1;
 const totalDepositsUSD = movements.filter(mov => mov > 0).map(mov => mov * euroToUsd).reduce((acc, mov) => acc + mov, 0);
@@ -114,6 +111,46 @@ function createUsername(accs) {
   });
 };
 createUsername(accounts);
+
+// Event Handler
+let currentAccount;
+
+currentAccount = btnLogin.addEventListener('click', function (e) {
+  e.preventDefault();
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI
+    containerApp.style.opacity = "1";
+
+    let timeOfUser = new Date();
+    let labelTime = timeOfUser.getHours();
+
+    if (labelTime > 12 && labelTime < 18) {
+      labelTime = `Afternoon`;
+    } else if (labelTime > 18 && labelTime < 24) {
+      labelTime = `Night`;
+    } else {
+      labelTime = `Morning`;
+    }
+    labelWelcome.textContent = `Good ${labelTime}, ${currentAccount.owner.split(" ")[0]}!`;
+    labelDate.innerHtml = 23;
+
+    // Clear input fields
+    inputLoginUsername.value = inputLoginPin.value = "";
+
+    // Calculate and Display Balance
+    printDisplayBalance(currentAccount.movements);
+
+    // Calculate and Display Summary
+    calcDisplaySummary(currentAccount);
+
+    // Display Movements
+    displayMovement(currentAccount.movements);
+
+    // Start/Restart User Timer
+  }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
