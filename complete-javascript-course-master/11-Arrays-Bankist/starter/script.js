@@ -71,10 +71,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 //
 
-function displayMovement(movements) {
+function displayMovement(movements, sort = false) {
   containerMovements.innerHTML = ``;
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? `deposit` : `withdrawal`;
     const html = 
     `<div class="movements__row">
@@ -189,6 +191,18 @@ currentAccount = btnLogin.addEventListener('click', function (e) {
     }
     inputCloseUsername.value = inputClosePin.value = "";
   });
+});
+
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovement(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
+
+labelBalance.addEventListener('click', function (e) {
+  const movementsUI = Array.from(document.querySelectorAll('.movements__value'), el => el.textContent.replace("€", ""));
+  console.log(movementsUI);
 });
 
 /////////////////////////////////////////////////
@@ -325,22 +339,76 @@ console.log(movements.every(deposit));
 console.log(movements.filter(deposit));*/
 
 // LESSON: flat and flatMap
-const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+/*const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
 console.log(arr.flat());
 
 const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
 console.log(arrDeep.flat());
 console.log(arrDeep.flat(2));
 
-/*const accountMovements = accounts.map(acc => acc.movements)
-console.log(accountMovements);
-const allAccountMovements = accountMovements.flat();
-console.log(allAccountMovements);
-const overallBalance = allAccountMovements.reduce((acc, mov) => acc + mov, 0);
-console.log(overallBalance);*/
+// const accountMovements = accounts.map(acc => acc.movements)
+// console.log(accountMovements);
+// const allAccountMovements = accountMovements.flat();
+// console.log(allAccountMovements);
+// const overallBalance = allAccountMovements.reduce((acc, mov) => acc + mov, 0);
+// console.log(overallBalance);
 
 const overallBalanceNew = accounts.map(acc => acc.movements).flat().reduce((acc, mov) => acc + mov, 0);
 console.log(overallBalanceNew);
 
 const overallBalanceFlatMap = accounts.flatMap(acc => acc.movements).reduce((acc, mov) => acc + mov, 0);
-console.log(overallBalanceFlatMap);
+console.log(overallBalanceFlatMap);*/
+
+// LESSON: Sorting
+/*const Names = ["Ömer", "Ahmet", "Göktan", "Ümit"];
+console.log(Names.sort());
+
+console.log(movements);
+// const sortedMovements = movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
+const sortedMovements = movements.sort((a, b) => a - b); // Ascending
+console.log(sortedMovements);
+const sortedMovements2 = movements.sort((a, b) => b - a); // Descending
+console.log(sortedMovements2);*/
+
+// LESSON: More Ways of Creating and Filling Arrays
+/*const arr = new Array(7);
+console.log(arr);
+// arr.fill(1);
+// console.log(arr); //[1, 1, 1, 1, 1, 1, 1]
+
+// arr.fill(1, 3); 
+// console.log(arr); //[0, 0, 0, 1, 1, 1, 1]
+
+arr.fill(1, 3, 5); 
+console.log(arr); //[0, 0, 0, 1, 1, 0, 0]
+
+const arrFrom = Array.from({length: 7}, (_, i) => i + 1);
+console.log(arrFrom);*/
+
+// LESSON: Practices
+// 1
+const bankDepositSum = accounts.flatMap(acc => acc.movements).filter(mov => mov >= 0).reduce((prev, curr) => prev + curr , 0);
+console.log(bankDepositSum);
+
+// 2
+const depositOver1000 = accounts.flatMap(acc => acc.movements).filter(mov => mov >= 1000).length;
+console.log(depositOver1000);
+const depositOver999 = accounts.flatMap(acc => acc.movements).reduce((i, curr) => curr > 999 ? ++i : i = i, 0);
+console.log(depositOver999);
+
+// 3
+const {deposits, withdrawals} = accounts.flatMap(acc => acc.movements).reduce((i, curr) => {
+    //curr > 0 ? i.deposits += curr : i.withdrawals += curr;
+    i[curr > 0 ? "deposits" : "withdrawals"] += curr;
+    return i;}
+, {deposits: 0, withdrawals: 0});
+console.log(deposits);
+console.log(withdrawals);
+
+// 4
+function converTitleCase(title) {
+  
+};
