@@ -233,14 +233,14 @@ console.log(letters.join()); // a,b,c,d,e,j,i,h,g,f
 console.log(letters.join(` - `)); // a - b - c - d - e - j - i - h - g - f*/
 
 // LESSON: The new at Method
-/*const arr = [233, 11, 64];
-console.log(arr[0]);
-console.log(arr.at(0));
+/*const arrAt = [233, 11, 64];
+console.log(arrAt[0]);
+console.log(arrAt.at(0));
 
 // gettin last element
-console.log(arr[arr.length - 1]);
-console.log(arr.slice(-1)[0]);
-console.log(arr.at(-1));*/
+console.log(arrAt[arrAt.length - 1]);
+console.log(arrAt.slice(-1)[0]);
+console.log(arrAt.at(-1));*/
 
 // LESSON: Looping Arrays: forEach
 /*//const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
@@ -331,3 +331,16 @@ console.log(arr.flat());
 const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
 console.log(arrDeep.flat());
 console.log(arrDeep.flat(2));
+
+/*const accountMovements = accounts.map(acc => acc.movements)
+console.log(accountMovements);
+const allAccountMovements = accountMovements.flat();
+console.log(allAccountMovements);
+const overallBalance = allAccountMovements.reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);*/
+
+const overallBalanceNew = accounts.map(acc => acc.movements).flat().reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalanceNew);
+
+const overallBalanceFlatMap = accounts.flatMap(acc => acc.movements).reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalanceFlatMap);
