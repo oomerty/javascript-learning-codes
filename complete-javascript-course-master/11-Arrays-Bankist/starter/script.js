@@ -389,7 +389,7 @@ const arrFrom = Array.from({length: 7}, (_, i) => i + 1);
 console.log(arrFrom);*/
 
 // LESSON: Practices
-// 1
+/*// 1
 const bankDepositSum = accounts.flatMap(acc => acc.movements).filter(mov => mov >= 0).reduce((prev, curr) => prev + curr , 0);
 console.log(bankDepositSum);
 
@@ -409,6 +409,9 @@ console.log(deposits);
 console.log(withdrawals);
 
 // 4
+// "this is a nice title" -> "This Is a Nice Title"
 function converTitleCase(title) {
-  
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+  return title.toLowerCase().split(" ").map((value, i) => i = exceptions.includes(value) ? value.toLowerCase() : value.charAt(0).toUpperCase() + value.slice(1)).join(" ");
 };
+console.log(converTitleCase("tHis iS A nice title"));*/
