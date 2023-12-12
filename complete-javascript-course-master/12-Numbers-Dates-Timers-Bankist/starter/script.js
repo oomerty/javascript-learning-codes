@@ -402,3 +402,9 @@ future.setFullYear(2040);
 console.log(future); // Mon Nov 19 2040 15:23:00 GMT+0300 (GMT+03:00)*/
 
 // LESSON: Operations With Dates
+const future = new Date(2037, 10, 19, 15, 23);
+const past = new Date(2037, 10, 15, 15, 23);
+
+function daysPassed(future, past) {
+  
+}
