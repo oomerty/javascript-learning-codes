@@ -31,26 +31,23 @@ document.addEventListener('keydown', function (e) {
 });
 
 ///////////////////////////////////////
-/////////////////////////////////////// LECTURES
-///////////////////////////////////////
+// Smooth Scrolling
+const btnScrollTo = document.querySelector(`.btn--scroll-to`);
+const section1 = document.querySelector('#section--1');
 
-// LESSON: Selecting, Creating, and Deleting Elements
-console.log(document.documentElement);
-console.log(document.head);
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  // console.log(s1coords); // DOMRect {x: 0, y: 641, width: 1016, height: 1538.6875, top: 641, …}
+  // console.log(e.target.getBoundingClientRect()); // DOMRect {x: 30, y: 500.171875, width: 110, height: 29, top: 500.171875, …}
+  // console.log(`Current Scroll`, window.pageXOffset, pageYOffset); // Current Scroll 0 300
+  // console.log('height/width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth); // height/width viewport 641 1016
 
-document.querySelector(".header");
-const allSections = document.querySelectorAll(".section");
-console.log(allSections);
+  //window.scrollTo(s1coords.left, s1coords.top + window.pageYOffset);
+  /*window.scrollTo({
+    left: s1coords.left,
+    top: s1coords.top + window.pageYOffset,
+    behavior: `smooth`,
+  });*/
 
-const section1 = document.getElementById("section--1");
-const allBtns = document.getElementsByTagName("button");
-document.getElementsByClassName("btn");
-console.log(allBtns);
-
-// Creating and Inserting Elements
-// .insertAdjacentHTML
-
-const message = document.createElement("div");
-message.classList("cookie-message");
-//message.textContent("We use cookies to personalise content and ads, to provide social media features and to analyse our traffic.");
-message.insertAdjacentHTML = `We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.`;
+  section1.scrollIntoView({behavior: `smooth`});
+});
