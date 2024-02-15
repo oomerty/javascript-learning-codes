@@ -19,7 +19,7 @@ const closeModal = function () {
   overlay.classList.add('hidden');
 };
 
-btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal))
+btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
@@ -27,6 +27,29 @@ overlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
+  }
+});
+
+///////////////////////////////////////
+// PAGE NAVIGATION
+const navLink = document.querySelectorAll('.nav__link');
+const navLinks = document.querySelector('.nav__links');
+
+/*navLink.forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({ behavior: 'smooth' });
+  });
+});*/
+
+// Event Delegation
+// 1. Add event listener to common parent element
+// 2. Determine what element originated the event
+
+navLinks.addEventListener('click', function (e) {
+  if(e.target.classList.contains(`nav__link`) && !e.target.classList.contains(`btn--show-modal`)) {
+    e.preventDefault();
+    document.querySelector(e.target.getAttribute("href")).scrollIntoView({ behavior: 'smooth' });
   }
 });
 
@@ -49,5 +72,8 @@ btnScrollTo.addEventListener('click', function (e) {
     behavior: `smooth`,
   });*/
 
-  section1.scrollIntoView({behavior: `smooth`});
+  section1.scrollIntoView({ behavior: `smooth` });
 });
+
+///////////////////////////////////////
+//

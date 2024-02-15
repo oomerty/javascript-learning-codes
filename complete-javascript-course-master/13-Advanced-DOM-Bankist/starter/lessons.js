@@ -70,4 +70,55 @@ logo.classList.remove("c", "j");
 logo.classList.toggle("c");
 logo.classList.contains("c");*/
 
+// LESSON: Events and Event Handlers
+/*const h1 = document.querySelector('h1');
+
+const alertH1 = function (e) {
+  alert(`Great!`);
+  // h1.removeEventListener(`mouseenter`, alertH1); // REMOVE Event Handler
+};
+
+h1.addEventListener(`mouseenter`, alertH1);
+
+// h1.onmouseenter = function (e) {alert(`Great (in a old way)!`);};
+
+setTimeout(() => h1.removeEventListener(`mouseenter`, alertH1), 5000);*/
+
+// LESSON: Event Propagation in Practice
+/*const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+console.log(randomColor());
+
+const navLink = document.querySelectorAll('.nav__link');
+const navLinks = document.querySelectorAll('.nav__links');
+const nav = document.querySelector('.nav');
+
+navLink.forEach(val =>
+  val.addEventListener('click', function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log(`LINK`, e.target, e.currentTarget);
+
+    // Stop Propagation
+    // e.stopPropagation();
+  })
+);
+
+navLinks.forEach(val =>
+  val.addEventListener('click', function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log(`LINKS`, e.target, e.currentTarget);
+  })
+);
+
+nav.addEventListener(
+  'click',
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log(`NAV`, e.target, e.currentTarget);
+  },
+  true
+); // TRUE iken ilk önce nav işlenir*/
+
 // LESSON: 
