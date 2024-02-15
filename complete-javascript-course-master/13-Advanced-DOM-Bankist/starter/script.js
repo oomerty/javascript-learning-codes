@@ -1,13 +1,15 @@
 'use strict';
 
-///////////////////////////////////////
-// Modal window
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+const navLink = document.querySelectorAll('.nav__link');
+const navLinks = document.querySelector('.nav__links');
+
+///////////////////////////////////////
+// Modal window
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -32,9 +34,6 @@ document.addEventListener('keydown', function (e) {
 
 ///////////////////////////////////////
 // PAGE NAVIGATION
-const navLink = document.querySelectorAll('.nav__link');
-const navLinks = document.querySelector('.nav__links');
-
 /*navLink.forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.preventDefault();
@@ -47,9 +46,14 @@ const navLinks = document.querySelector('.nav__links');
 // 2. Determine what element originated the event
 
 navLinks.addEventListener('click', function (e) {
-  if(e.target.classList.contains(`nav__link`) && !e.target.classList.contains(`btn--show-modal`)) {
+  if (
+    e.target.classList.contains(`nav__link`) &&
+    !e.target.classList.contains(`btn--show-modal`)
+  ) {
     e.preventDefault();
-    document.querySelector(e.target.getAttribute("href")).scrollIntoView({ behavior: 'smooth' });
+    document
+      .querySelector(e.target.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
   }
 });
 
@@ -76,4 +80,25 @@ btnScrollTo.addEventListener('click', function (e) {
 });
 
 ///////////////////////////////////////
-//
+// Tabbed Component
+const operationContainer = document.querySelector('.operations');
+
+operationContainer.addEventListener('click', function (e) {
+  if (e.target.classList.contains(`btn`)) {
+    const id = [...e.target.classList].splice(` `).at(2).at(-1);
+    const optTabActive = `operations__tab--active`;
+    if (!e.target.classList.contains(optTabActive)) {
+      Array.from(e.target.parentElement.children).forEach(el =>
+        el.classList.contains(`operations__tab--${id}`)
+          ? el.classList?.add(optTabActive)
+          : el.classList?.remove(optTabActive)
+      );
+
+      Array.from(this.children).forEach(el =>
+        el.classList.contains(`operations__content--${id}`)
+          ? el.classList.add(`operations__content--active`)
+          : el.classList?.remove(`operations__content--active`)
+      );
+    }
+  }
+});

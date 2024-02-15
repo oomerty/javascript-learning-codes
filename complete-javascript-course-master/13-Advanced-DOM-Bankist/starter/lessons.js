@@ -121,4 +121,31 @@ nav.addEventListener(
   true
 ); // TRUE iken ilk önce nav işlenir*/
 
+// LESSON: DOM Traversing
+/* const h1 = document.querySelector('h1');
+
+// Going Downwards: child
+console.log(h1.querySelectorAll(`.highlight`));
+console.log(h1.childNodes); // NodeList(9) [text, comment, text, span.highlight, text, br, text, span.highlight, text]
+console.log(h1.children); // HTMLCollection(3) [span.highlight, br, span.highlight]
+
+h1.firstElementChild.style.color = "white";
+h1.lastElementChild.style.color = "orangered";
+
+// Going Upwards: parent
+console.log(h1.parentNode); // div.header__title
+console.log(h1.parentElement); // div.header__title
+
+h1.closest(`.header`).style.background = `var(--gradient-secondary)`;
+h1.closest(`h1`).style.background = `var(--gradient-primary)`;
+
+// Going Sideways: sibling
+console.log(h1.previousElementSibling); // null
+console.log(h1.nextElementSibling); // h4
+
+console.log(h1.previousSibling); // #text
+console.log(h1.nextSibling); // #text
+
+console.log(h1.parentElement.children); // HTMLCollection(4) [h1, h4, button.btn--text.btn--scroll-to, img.header__img] */
+
 // LESSON: 
