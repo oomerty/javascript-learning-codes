@@ -148,4 +148,19 @@ console.log(h1.nextSibling); // #text
 
 console.log(h1.parentElement.children); // HTMLCollection(4) [h1, h4, button.btn--text.btn--scroll-to, img.header__img] */
 
+// LESSON: Lifecycle DOM Events
+/*document.addEventListener("DOMContentLoaded", function (e) {
+  console.log("HTML parsed and DOM tree built!", e);
+})
+
+window.addEventListener('load', function (e) {
+  console.log("Page fully loaded!", e);
+});
+
+// window.addEventListener('beforeunload', e => {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });*/
+
 // LESSON: 

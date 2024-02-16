@@ -266,30 +266,25 @@ sliderInView.observe(section3);
 
 // Navigation with Dots
 function createDots() {
-  slides.forEach(function (el, i) {
-    const dot = document.createElement(`button`);
-    dot.classList.add(`dots__dot`);
-    dot.setAttribute(`data-slide`, `${i}`);
-    dots.appendChild(dot);
-    if (Number.parseInt(dot.dataset.slide) === curSlide)
-      dot.classList.add(`dots__dot--active`);
-  });
+  slides.forEach((_, i) =>
+    dots.insertAdjacentHTML(
+      `beforeend`,
+      `<button class="dots__dot" data-slide="${i}"></button>`
+    )
+  );
 }
 
 function updateDots() {
-  dot.forEach(dot => Array.from(dot.parentElement.children).forEach(el =>
-    el.classList.contains(`dots__dot--active`)
-      ? el.classList.remove(`dots__dot--active`)
-      : null
-  ))
-};
+  dot.forEach(function (dot) {
+    Number.parseInt(dot.dataset.slide) === curSlide
+      ? dot.classList.add(`dots__dot--active`)
+      : dot.classList?.remove(`dots__dot--active`);
+  });
+}
 
-dot.forEach(el =>
-  el.addEventListener('click', function (e) {
-    if (Number.parseInt(el.dataset.slide) !== curSlide) {
-      curSlide = el.dataset.slide;
-      goToSlide(curSlide);
-      el.classList.add(`dots__dot--active`);
-    }
-  })
-);
+dots.addEventListener('click', function (e) {
+  if (Number.parseInt(e.target.dataset.slide) !== curSlide) {
+    curSlide = Number.parseInt(e.target.dataset.slide);
+    goToSlide(Number.parseInt(curSlide));
+  }
+});
