@@ -28,98 +28,51 @@
 
     <script defer src="script.js"></script>
     <title>mapty // Map your workouts</title>
+    <link href="./output.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="sidebar">
-      <img src="logo.png" alt="Logo" class="logo" />
+  <body class="bg-gray-50 text-zinc-100 font-sans font-normal p-10">
+    <div class="sidebar container sm bg-zinc-900 flex-initial flex-column px-12 pt-12 pb-16 basis-32">
+      <img src="logo.png" alt="Logo" class="logo self-center mb-16 h-20"/>
 
       <ul class="workouts">
-        <form class="form hidden">
-          <div class="form__row">
-            <label class="form__label">Type</label>
-            <select class="form__input form__input--type">
+        <form class="form hidden grid grid-cols-2 bg-zinc-800 rounded-md px-9 py-6 mb-7 gap-x-10 gap-y-4">
+          <div class="form__row flex items-center">
+            <label class="form__label text-xl font-semibold appearance-none ">Type</label>
+            <select class="form__input form__input--type w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600">
               <option value="running">Running</option>
               <option value="cycling">Cycling</option>
             </select>
           </div>
-          <div class="form__row">
-            <label class="form__label">Distance</label>
-            <input class="form__input form__input--distance" placeholder="km" />
+          <div class="form__row flex items-center">
+            <label class="form__label text-xl font-semibold">Distance</label>
+            <input class="form__input form__input--distance w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600" placeholder="km" />
           </div>
-          <div class="form__row">
-            <label class="form__label">Duration</label>
+          <div class="form__row flex items-center">
+            <label class="form__label text-xl font-semibold">Duration</label>
             <input
-              class="form__input form__input--duration"
+              class="form__input form__input--duration w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600"
               placeholder="min"
             />
           </div>
-          <div class="form__row">
-            <label class="form__label">Cadence</label>
+          <div class="form__row flex items-center">
+            <label class="form__label text-xl font-semibold">Cadence</label>
             <input
-              class="form__input form__input--cadence"
+              class="form__input form__input--cadence w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600"
               placeholder="step/min"
             />
           </div>
-          <div class="form__row form__row--hidden">
-            <label class="form__label">Elev Gain</label>
+          <div class="form__row form__row--hidden flex items-center">
+            <label class="form__label text-xl font-semibold">Elev Gain</label>
             <input
-              class="form__input form__input--elevation"
+              class="form__input form__input--elevation w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600"
               placeholder="meters"
             />
           </div>
           <button class="form__btn">OK</button>
         </form>
-
-        <!-- <li class="workout workout--running" data-id="1234567890">
-          <h2 class="workout__title">Running on April 14</h2>
-          <div class="workout__details">
-            <span class="workout__icon">🏃‍♂️</span>
-            <span class="workout__value">5.2</span>
-            <span class="workout__unit">km</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">⏱</span>
-            <span class="workout__value">24</span>
-            <span class="workout__unit">min</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">⚡️</span>
-            <span class="workout__value">4.6</span>
-            <span class="workout__unit">min/km</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">🦶🏼</span>
-            <span class="workout__value">178</span>
-            <span class="workout__unit">spm</span>
-          </div>
-        </li>
-
-        <li class="workout workout--cycling" data-id="1234567891">
-          <h2 class="workout__title">Cycling on April 5</h2>
-          <div class="workout__details">
-            <span class="workout__icon">🚴‍♀️</span>
-            <span class="workout__value">27</span>
-            <span class="workout__unit">km</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">⏱</span>
-            <span class="workout__value">95</span>
-            <span class="workout__unit">min</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">⚡️</span>
-            <span class="workout__value">16</span>
-            <span class="workout__unit">km/h</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">⛰</span>
-            <span class="workout__value">223</span>
-            <span class="workout__unit">m</span>
-          </div>
-        </li> -->
       </ul>
 
-      <p class="copyright">
+      <p class="copyright text-lg text-center text-zinc-300 mt-auto">
         &copy; Copyright by
         <a
           class="twitter-link"
