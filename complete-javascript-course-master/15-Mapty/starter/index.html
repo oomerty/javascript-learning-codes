@@ -28,24 +28,35 @@
 
     <script defer src="script.js"></script>
     <title>mapty // Map your workouts</title>
-    <link href="./output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet" />
   </head>
   <body class="bg-gray-50 text-zinc-100 font-sans font-normal p-10">
-    <div class="sidebar container sm bg-zinc-900 flex-initial flex-column px-12 pt-12 pb-16 basis-32">
-      <img src="logo.png" alt="Logo" class="logo self-center mb-16 h-20"/>
+    <div
+      class="sidebar container 2xl bg-zinc-900 flex-initial flex-column px-12 pt-12 pb-16 basis-1/4"
+    >
+      <img src="logo.png" alt="Logo" class="logo self-center mb-16 h-20" />
 
-      <ul class="workouts">
-        <form class="form hidden grid grid-cols-2 bg-zinc-800 rounded-md px-9 py-6 mb-7 gap-x-10 gap-y-4">
+      <ul class="workouts list-none overflow-x-hidden overflow-y-scroll">
+        <form
+          class="form hidden grid grid-cols-2 bg-zinc-800 rounded-md px-9 py-6 mb-7 gap-x-10 gap-y-4"
+        >
           <div class="form__row flex items-center">
-            <label class="form__label text-xl font-semibold appearance-none ">Type</label>
-            <select class="form__input form__input--type w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600">
+            <label class="form__label text-xl font-semibold appearance-none"
+              >Type</label
+            >
+            <select
+              class="form__input form__input--type w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600"
+            >
               <option value="running">Running</option>
               <option value="cycling">Cycling</option>
             </select>
           </div>
           <div class="form__row flex items-center">
             <label class="form__label text-xl font-semibold">Distance</label>
-            <input class="form__input form__input--distance w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600" placeholder="km" />
+            <input
+              class="form__input form__input--distance w-full px-4 py-1 text-xl border-none rounded-md bg-zinc-700 focus:bg-zinc-600"
+              placeholder="km"
+            />
           </div>
           <div class="form__row flex items-center">
             <label class="form__label text-xl font-semibold">Duration</label>
@@ -71,6 +82,10 @@
           <button class="form__btn">OK</button>
         </form>
       </ul>
+
+      <div class="grid columns-2"> 
+        <div class="nuke-btn text-xl p-4 mb-4 bg-red-800 hover:bg-red-700 active:bg-red-900 rounded-md text-center transition-all duration-300"><p>🗑️ Delete All Workouts</p></div>
+      </div>
 
       <p class="copyright text-lg text-center text-zinc-300 mt-auto">
         &copy; Copyright by

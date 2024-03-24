@@ -7,6 +7,7 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
+const nukeWorkouts = document.querySelector('.nuke-btn');
 
 class Workout {
   date = new Date();
@@ -86,6 +87,7 @@ class App {
     form.addEventListener('submit', this._newWorkout.bind(this));
     inputType.addEventListener('change', this._toggleElevationField);
     containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
+    nukeWorkouts.addEventListener('click', this._nukeWorkouts.bind(this));
   }
 
   _getPosition() {
@@ -222,10 +224,14 @@ class App {
   }
 
   _renderWorkout(workout) {
-    let html = `<li class="workout workout--${workout.type} grid bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-900 rounded-md cursor-pointer mb-7 px-9 py-6 gap-x-6 gap-y-3" data-id="${
+    let html = `<li class="workout workout--${
+      workout.type
+    } grid bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-900 rounded-md cursor-pointer mb-7 px-9 py-6 gap-x-6 gap-y-3" data-id="${
       workout.id
     }">
-      <h2 class="workout__title font-semibold text-2xl col-span-full">${workout.description}</h2>
+      <h2 class="workout__title font-semibold text-2xl col-span-full">${
+        workout.description
+      }</h2>
       <div class="workout__details flex items-baseline">
         <span class="workout__icon text-xl mr-1 h-1">${
           workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'
@@ -304,8 +310,20 @@ class App {
   }
 
   reset() {
-    localStorage.removeItem("workouts");
+    localStorage.removeItem('workouts');
     location.reload();
+  }
+
+  _nukeWorkouts() {
+    nukeWorkouts.innerHTML = `
+    <p class="font-semibold mb-2">Are you sure you want to delete your workouts?</p>
+    <p>You won't be able to revert this action. If you are sure, click the button for second time.</p>
+    `;
+
+    nukeWorkouts.addEventListener('click', function (e) {
+      e.preventDefault();
+      app.reset();
+    });
   }
 }
 
