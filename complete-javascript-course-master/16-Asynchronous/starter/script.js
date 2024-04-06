@@ -3,7 +3,6 @@
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
-///////////////////////////////////////
 function renderCountry(data, className = ``) {
   const html = `<article class="country ${className}">
   <img class="country__img" src="${data.flags.png}"/>
@@ -23,8 +22,12 @@ function renderCountry(data, className = ``) {
 </article>`;
 
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
 }
+
+function renderError(msg) {
+  countriesContainer.insertAdjacentText(`beforeend`, msg);
+}
+///////////////////////////////////////
 
 function getCountryAndNeighbour(country) {
   // AJAX call country 1
@@ -41,8 +44,8 @@ function getCountryAndNeighbour(country) {
 
     // Get neighbour country
     const [neighbour] = data.borders;
-    if(!neighbour) return;
-    
+    if (!neighbour) return;
+
     // AJAX call country 2
     const request2 = new XMLHttpRequest();
     request2.open('GET', `https://restcountries.com/v3.1/alpha/${neighbour}`);
@@ -55,6 +58,66 @@ function getCountryAndNeighbour(country) {
   });
 }
 
-getCountryAndNeighbour('turkey');
+//getCountryAndNeighbour('turkey');
 //getCountryAndNeighbour('usa');
 //getCountryAndNeighbour('egypt');
+
+// const request = new XMLHttpRequest();
+// request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
+// request.send();
+
+function getJSON(url, errorMsg = `Something went wrong`) {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+
+    return response.json();
+  });
+}
+
+function getCountryData(country) {
+  getJSON(`https://restcountries.com/v3.1/name/${country}`, `Country not found`)
+    .then(data => {
+      renderCountry(data.at(0));
+      const neighbour = data.at(0).borders?.at(0);
+
+      if (!neighbour) throw new Error(`No neighbour found`);
+
+      return getJSON(
+        `https://restcountries.com/v3.1/name/${neighbour}`,
+        `Country not found`
+      );
+    })
+    .then(data => renderCountry(data.at(0), `neighbour`))
+    .catch(err => {
+      console.log(`${err} 😔`);
+      renderError(`Something went wrong 😔 ${err.message}. Try again!`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
+}
+
+function whereAmI(lat, lng) {
+  fetch(
+    `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
+  )
+    .then(response => {
+      if (!response.ok) throw new Error(`You are refreshing the page too fast`);
+
+      return response.json();
+    })
+    .then(data => {
+      console.log(`You are in ${data.locality}, ${data.countryName}`);
+      getCountryData(data.countryName);
+    })
+    .catch(err =>  renderError(`Oops! Something went wrong :c Try Again! (${err})`)
+    );
+}
+
+btn.addEventListener('click', function (e) {
+  getCountryData('turkey');
+});
+
+//whereAmI(36.8744412, 30.6396268);
+
+//getCountryData('tuasfrkey');
